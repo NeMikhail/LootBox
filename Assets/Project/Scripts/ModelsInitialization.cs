@@ -1,6 +1,7 @@
 using AxGrid.Base;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LootBox
 {
@@ -10,6 +11,7 @@ namespace LootBox
         [SerializeField] private RectTransform _contentTransform;
         [SerializeField] private GameObject _itemFramePrefab;
         [SerializeField] private GameObject _effectsObject;
+        [SerializeField] private VerticalLayoutGroup _layout;
 
         [OnAwake]
         void Init()
@@ -28,6 +30,7 @@ namespace LootBox
             Model.Set(ConsatantStrings.C_CONTENT_RECT_TRANSFORM, _contentTransform);
             Model.Set(ConsatantStrings.GO_ITEM_FRAME_PREFAB, _itemFramePrefab);
             Model.Set(ConsatantStrings.GO_EFFECTS_OBJECT, _effectsObject);
+            Model.Set(ConsatantStrings.C_VERTICAL_LAYOUT, _layout);
         }
     }
 }

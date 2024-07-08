@@ -49,9 +49,20 @@ namespace AxGrid.Tools.Binders{
 		private bool cancel = false;
 
 		private EventTrigger et;
-		
+
+		public bool Cancel
+        {
+			get => cancel;
+			set => cancel = value;
+        }
+
+		public Button Button
+        {
+			get => button;
+        }
+
 		[OnAwake]
-		public void awake()
+        public void awake()
 		{
 			button = GetComponent<Button>();
 			if (string.IsNullOrEmpty(buttonName))
@@ -113,7 +124,7 @@ namespace AxGrid.Tools.Binders{
 			Model.EventManager.RemoveAction($"On{keyField}Changed", OnKeyChanged);
 		}
 
-		private void OnClick(BaseEventData bd)
+		public virtual void OnClick(BaseEventData bd)
 		{
 			Log.Debug("CLICK!");
 			if (!cancel)
@@ -121,19 +132,18 @@ namespace AxGrid.Tools.Binders{
 			cancel = false;
 		}
 		
-		public void OnClick()
+		public virtual void OnClick()
 		{
 			if (!button.interactable || !isActiveAndEnabled)
 				return;
 
 			if (!cancel)
 			{
-				//Settings. Added
-				Settings.Model?.EventManager.Invoke("SoundPlay", "Click");
+				Model?.EventManager.Invoke("SoundPlay", "Click");
 				
 				Settings.Fsm?.Invoke("OnBtn", buttonName);
 
-				Settings.Model?.EventManager.Invoke($"On{buttonName}Click");
+				Model?.EventManager.Invoke($"On{buttonName}Click");
 			}
 			cancel = false;
 		}

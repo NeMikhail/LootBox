@@ -12,6 +12,7 @@
         public const string S_REWARD_STATE = "BoxGettingReward";
 
         public const string C_CONTENT_RECT_TRANSFORM = "ScrollContentTransform";
+        public const string C_VERTICAL_LAYOUT = "VerticalLayout";
 
         public const string D_ITEMS_LIST = "Items";
         public const string D_ITEM_VIEWS = "ItemViews";

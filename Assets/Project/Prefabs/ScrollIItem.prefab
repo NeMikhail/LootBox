@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5436983181763316214}
   - component: {fileID: 9085481426336333504}
   m_Layer: 5
-  m_Name: TestImage
+  m_Name: ScrollIItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _iconImage: {fileID: 5272703604436413394}
+  _rectTransform: {fileID: 7808809606186419249}
 --- !u!1 &7418292036089347993
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ namespace LootBox
         private void EnterThis()
         {
             InitFields();
-            //Можно было сделать через [Loop], я сделал через подписку
             Settings.Model.EventManager.AddAction(ConsatantStrings.E_EXECUTE_BOX_STATE,
                 Execute);
             _effectsObject.SetActive(false);
